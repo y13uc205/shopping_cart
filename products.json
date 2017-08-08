@@ -1,8 +1,9 @@
 {
   "name" : ["Elder Wand", "Harry's wand", "Voldemort's wand"],
-  "id" : [0001, 0002, 0003],
+  "id" : ["0001", "0002", "0003"],
   "previous_owner": ["Albus Dumbledore", "Harry Potter", "Voldemort"],
   "length" : ["15' inch", "11 inch", "13.5 inch"],
   "made-of" : ["Elder wood and have a thestral tail hair core", "Holly and have a pheonix feather core", "Yew and have a pheonix feather core"],
-  "price": [1000, 500, 600],
+  "price": [1000, 500, 600]
 }
+
