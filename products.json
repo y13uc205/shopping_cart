@@ -5,6 +5,7 @@
   "length" : ["15' inch", "11 inch", "13.5 inch"],
   "madeOf" : ["Elder wood and have a thestral tail hair core", "Holly and have a pheonix feather core", "Yew and have a pheonix feather core"],
   "price": [1000, 500, 600],
+  "wand" : ["wand1.png", "wand2.png", "wand3.png"],
   "test_object" : "hahaha"
 }
 
