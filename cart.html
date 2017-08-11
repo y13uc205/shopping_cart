@@ -6,15 +6,39 @@
         <link rel="stylesheet" href="stylesheet.css">
         <script type="text/javascript" src="javascript.js"></script>
     </head>
-    <body>
+    <body onload="shoppingCart()">
         
-        <h1>Shopping Cart</h1>
-        <h2><a href="index.html">Home</a></h2>
-        <h2><a href="cart.html">Cart</a></h2>
+        <div class="header1">
+	<div class="head0">
+      		<div class="head1" >
+     			 <h1> Olivanders</h1>
+     		 </div>
+		<div class="menu">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="">About Us</a></li>
+				<li><a href="">Contact</a></li>
+				<!--<li><a href="cart.html"><img src="cart.png" width="50px" height="50px" href="cart.html"></a></li>-->
+                <span style="color:white">Hellooo</span>
+                <span style="color:white">Hellooo</span>
+                <a href="cart.html"><img src="cart.png" width="50px" height="50px" href="cart.html"></a>
+                <!--<li>0</li>-->
+			</ul>
+            
+            
 
+		</div>
         
-        
+	</div>
+    </div>
+    
+    <div class="mid">
         <p id="demo_cart"></p>
+    </div>
+    
+    <div >
+            <span class="clearcart"><button onclick="clearCart()">Clear Cart</button></span>
+        </div>
         
         
     </body>
