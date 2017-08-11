@@ -1,2 +1,134 @@
 #box {float: left; width: 25%; height: 200px; border: 1px solid black; margin: 20px 20px 20px 20px;}
 #box2 {float: left; width: 25%; border: 1px solid black; margin: 20px 20px 20px 20px;}
+
+
+ body {
+	background-image: url("treasure.jpg");
+    background-color: #cccccc;
+    margin-top: 0;
+}
+
+html,p,h1,h{
+	
+}
+	html{	
+		position:relative;
+		background-color:#fff;
+}
+	.header1{
+		background-color:#fff;
+		width:100%;
+		height:200px;
+        font-family: 'Sedgwick Ave Display', cursive;
+ 	    color: #8B4513;
+        
+		
+		}
+	.head0{
+		width:1200px;
+		left:75px;
+		position:absolute;	}
+
+
+        .head1{
+		color:#FFF;
+		font-weight:500;
+		width:388px;
+		height:150px;
+		top:85px;
+		position:absolute;	
+		/*padding:5px 10px;*/
+		text-align:center;
+		font-size:30px;
+        border-radius: 30%;
+		font-family: 'Sedgwick Ave Display', cursive;
+         /*background-color: #8B4513;*/
+        background-image: url("treasure.jpg");
+        background-size: 390px 158px;
+       
+        
+        }
+      .menu{
+		
+		position:absolute;
+		top:120px;
+		left:423px;
+        
+	
+	}  
+	div.menu li{
+		display:inline-block;
+		line-height:1em;
+		color:white;
+		text-decoration:none;
+		/*background-color:#000035;*/
+		padding:12px 23px;
+		text-align:center;
+		/*border:1px solid #000035;*/
+		border-radius:5px;
+        background-image: url("treasure.jpg");
+        background-size: 159px 44px;
+        background-repeat: no-repeat;
+        /*width: 120px;
+        height: 40px;*/
+        
+		margin:7px;
+}      	.menu li a{
+		text-decoration:none;
+		color:#FFF;
+        font-size: 20px;
+		}
+        
+        .menu a{
+            background-image: none;
+        }
+
+	.mid
+		{
+		width:1200px;
+		left:149px;
+		position:absolute;
+		margin-top: 50px;
+		}
+	div.list1{
+		border:1px solid #ccc;
+		}
+	div.list1:hover
+		{
+		 border: 1px solid #777;
+		}
+	
+	div.des {
+   		 padding: 15px;
+   		 text-align: center;
+		}
+	
+	
+	.products {
+    	padding: 41px 6px 6px 6px;
+    	/*float: left;*/
+        background-image: url("treasure.jpg");
+        background-size: 310px 200px;
+        background-repeat: no-repeat;
+   		margin:20px 15px 20px 15px;
+        font-family: 'Sedgwick Ave Display', cursive;
+ 	    color: #8B4513;
+        width: 300px;
+        /*height: 480px;*/
+        text-align: center;
+		}
+        
+     .products a {
+         text-decoration: none;
+         color: #8B4513;
+         /*background-color: white;*/
+         /*padding: 0px 10px ;*/
+         /*margin-top: 100px;*/
+         /*border: 1px solid black;*/
+         font-size: 18px;
+     }
+      .products a:hover{
+          font-size: 22px;
+      }
+      
+      
