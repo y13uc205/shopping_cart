@@ -5,7 +5,7 @@
   "length" : ["15' inch", "11 inch", "13.5 inch", "14 inch", "12.75 inch", "12 inch"],
   "madeOf" : ["Elder wood and have a thestral tail hair core", "Holly and have a pheonix feather core", "Yew and have a pheonix feather core", "Unknown", " Walnut and have a dragon heartstring core", "Ash and had a core of unicorn hair"],
   "price": [1000, 500, 600, 500, 400, 250],
-  "wand" : ["wand1.png", "wand2.png", "wand3.png", "wand4.png", "wand5.png", "wand6.png"],
+  "wand" : ["wand1.png", "wand2.png", "wand3.png", "wand4.png", "wand5.png", "wand6.jpg"],
   "test_object" : "hahaha"
 }
 
