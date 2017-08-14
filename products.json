@@ -5,7 +5,7 @@
   "length" : ["5' inch", "4.7 inch", "5 inch", "5.5 inch", "5 inch", "5.5 inch"],
   "camera" : ["8 MP", "12 MP", "10 MP", "12 MP", " 8 MP", "13 MP"],
   "price": [7000, 63000, 7900, 9000, 7000, 17000],
-  "phones" : ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpeg", "6.jpeg"]
-
+  "phones" : ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg"]
+"test_object" : "hahaha"
 }
 
