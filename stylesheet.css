@@ -81,10 +81,6 @@
 .products a {
 		text-decoration: none;
 		color: black;
-		/*background-color: white;*/
-		/*padding: 0px 10px ;*/
-		/*margin-top: 100px;*/
-		/*border: 1px solid black;*/
 		font-size: 18px;
 }
 .products a:hover{
@@ -115,9 +111,6 @@
 	font-size: 20px;
 	padding-top: 10PX;
 	background-repeat: no-repeat;
-}
-.cartTable{
-
 }
 .checkout{
 	margin: 60px 419px 40px 321px;
@@ -154,5 +147,4 @@ span{
 	font-size: 13px;
 	margin: 0px 5px;
 	cursor: pointer;
-	
 }
