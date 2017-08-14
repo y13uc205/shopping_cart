@@ -1,11 +1,11 @@
 {
-  "name" : ["Elder Wand", "Harry's Wand", "Voldemort's Wand", "Snape's Wand", "Bellatrix's Wand", "Ron's Wand"],
+  "name" : [" Samsung On5", "Apple iphone7", "Xiomee redmi", "Samsung On7 pro G-600FY", "Moto C", "Samsung Galaxy"],
   "id" : ["0001", "0002", "0003", "0004", "0005", "0006"],
-  "previous_owner": ["Albus Dumbledore", "Harry Potter", "Voldemort", "Severus Snape", "Bellatrix Lestrange", "Ron Weasley"],
-  "length" : ["15' inch", "11 inch", "13.5 inch", "14 inch", "12.75 inch", "12 inch"],
-  "madeOf" : ["Elder wood and have a thestral tail hair core", "Holly and have a pheonix feather core", "Yew and have a pheonix feather core", "Unknown", " Walnut and have a dragon heartstring core", "Ash and had a core of unicorn hair"],
-  "price": [1000, 500, 600, 500, 400, 250],
-  "wand" : ["wand1.png", "wand2.png", "wand3.png", "wand4.png", "wand5.png", "wand6.png"],
-  "test_object" : "hahaha"
+  
+  "length" : ["5' inch", "4.7 inch", "5 inch", "5.5 inch", "5 inch", "5.5 inch"],
+  "camera" : ["8 MP", "12 MP", "10 MP", "12 MP", " 8 MP", "13 MP"],
+  "price": [7000, 63000, 7900, 9000, 7000, 17000],
+  "wand" : ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpgg"]
+
 }
 
