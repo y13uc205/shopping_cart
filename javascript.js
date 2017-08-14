@@ -1,146 +1,154 @@
-function addToCart(index) {
-    if (sessionStorage.cart === undefined) {
-        sessionStorage.cart = index;
-    } else {
-        sessionStorage.cart += index;
-    }
-
-}
-
-function shoppingCart() {
-    if (sessionStorage.cart === undefined) {
-        sessionStorage.cart = undefined;
-    }
-    var xmlhttp2 = new XMLHttpRequest();
-    xmlhttp2.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            var myObj2 = JSON.parse(this.responseText);
-            var display = "";
-            var itemLength = myObj2.name.length;
-            var quantity = [];
-            for (var i = 0; i < itemLength; i++) {
-                quantity.push(0);
-            }
-            var total = 0;
-            if (sessionStorage.cart == "undefined") {
-                clearCart();
-            } else {
-                for (var k = 0; k < sessionStorage.cart.length; k++) {
-                    var t = parseInt(sessionStorage.cart[k]);
-                    quantity[t]++;
-                }
-                display += "<div  class=" + "cartTable" + " ><table id=" + "t01" + " ><tr><th>Item</th><th>Price</th><th>Quantity</th><th>Cost</th></tr>";
-
-                for (var p = 0; p < quantity.length; p++) {
-                    if (quantity[p] == 0) {
-                        continue;
-                    } else {
-                        display += "<tr><td>" + myObj2.name[p] + "</td><td>" +
-                            myObj2.price[p] + "</td><td>" +
-                            quantity[p] + "</td><td>" +
-                            quantity[p] * myObj2.price[p] + "</td></tr>";
-                        total += quantity[p] * myObj2.price[p];
-                    }
-                }
-                display += "</table></div>";
-                display += "<div class=" + "checkout" + "><button class=" + "button" + " onclick=" + "clearCart()" + ">Clear Cart</button>" +
-                    "<span >  Shubham   Gupta  </span>" +
-                    "<button  class=" + "button" + " onclick=" + "checkOut()" + ">CheckOut</button></div>";
-                sessionStorage.totalAmount = total;
-                document.getElementById("demo_cart").innerHTML = display;
-            }
-        }
-    };
-    xmlhttp2.open("GET", "https://raw.githubusercontent.com/shubh276/Olivanders/master/products.json", true);
-    xmlhttp2.send();
-}
-
-function checkOut() {
-    alert("Total payable amount is " + sessionStorage.totalAmount);
-}
-
-function clearCart() {
-    sessionStorage.cart = undefined;
-    document.getElementById("demo_cart").innerHTML = "<div class=" + "zero" + ">You have Zero items in your cart.</div>"
-}
-
-function detailsOnload() {
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            var myObj = JSON.parse(this.responseText);
-            var result = "";
-            var i = parseInt(sessionStorage.detail);
-            result += "<div class=" + "detailImage" + "><img src=" + myObj.wand[i] + "></div>" +
-                "<div class=" + "description" + "><p>" + "Name: " + myObj.name[i] + "<br>" +
-                "Previous Owner: " + myObj.previous_owner[i] + "<br>" +
-                "Length: " + myObj.length[i] + "<br>" +
-                "Material: " + myObj.madeOf[i] + "<br>" +
-                "Previous Owner: " + myObj.previous_owner[i] + "<br>" +
-                "Price: " + myObj.price[i] + "</p>" + "<br>" +
-                "<button  class=" + "button" + "  onclick=" + "addToCart(" + i + ")>Add To Cart</button>" +
-                "</div>";
-            document.getElementById("demo_details").innerHTML = result;
-        }
-    };
-    xmlhttp.open("GET", "https://raw.githubusercontent.com/shubh276/Olivanders/master/products.json", true);
-    xmlhttp.send();
-
-}
-
-function detailsVar(index) {
-    sessionStorage.detail = index;
-}
-
-function indexOnload() {
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            var myObj = JSON.parse(this.responseText);
-            var result = "";
-            for (var i = 0; i < myObj.name.length; i++) {
-                result += "<div class=" + "products" + "><h2>" + myObj.name[i] + "</h2><p>" +
-                    "<img src=" + myObj.wand[i] + " width=" + "150px" + " height=" + "150px" + "><br>" +
-                    "<h3>Price: " + myObj.price[i] + "</p>" + "<h3>" +
-                    "<button id=" + "favorite" + i + " class='button fn_fav'" + " onclick=" + "markFavorite('favorite" + i + "')" + ">Favorite</button>" +
-                    "   " +
-                    "<button  class=" + "button" + "  onclick=" + "addToCart(" + i + ")>Add To Cart</button><br>" +
-                    "<br><a href=" + "details.html" + " onclick=" + "detailsVar(" + i + "); " + ">More Details</a>" +
-                    "</div>";
-            }
-            document.getElementById("demo").innerHTML = result;
-            setFavorite();
-        }
-    };
-    xmlhttp.open("GET", "https://raw.githubusercontent.com/shubh276/Olivanders/master/products.json", true);
-    xmlhttp.send();
-}
-
-function markFavorite(id_name) {
-
-    var isFav = sessionStorage.getItem(id_name);
-    var property = document.getElementById(id_name);
-
-    if (!isFav) {
-        sessionStorage.setItem(id_name, 'true');
-        property.style.backgroundColor = "#7FFF00";
-    } else {
-        sessionStorage.removeItem(id_name);
-        property.style.backgroundColor = "#deb887";
-    }
-
+body {
+	background-image:  url("treasure.jpg");
 }
 
 
+.header{
+	width: 1200px;
+	height: 130px;
+	margin-left: 50px;
+	position: fixed;
+	background-color: white;
+	top: 0;
+}
+.logo {
+	background-image: url("treasure.jpg");
+	background-size: 330px 15px;
+	width: 27%;
+	height: 75px;
+	margin: 32px 20px 20px 20px;
+	border-radius: 30%;
+	float: left;
+}
 
-function setFavorite() {
-    var favList = document.getElementsByClassName('fn_fav');    
-    for (var i = 0; i < favList.length; i++) {
-        var selectedItemId = favList[i].id;
-        var isFav = sessionStorage.getItem(selectedItemId);
-        var btnFav = document.getElementById(selectedItemId);
-        if (isFav) {
-            btnFav.style.backgroundColor = "#7FFF00";
-        }
-    }
+.logo h1{
+	text-align: center;
+	font-family: 'Sedgwick Ave Display', cursive;
+	font-size: 50px;
+	margin-top: 0;
+}
+.nav-bar{
+	width: 64%;
+	float: right;
+	margin-top: 15px;
+}
+.nav-bar ul{
+	padding-left: 0px;
+}
+.nav-bar li {
+	display: inline-block;
+	background-image: url("treasure.jpg");
+	background-size: 112px 35px;
+	width: 110px;
+	height: 35px;
+	margin: 0px 30px 10px 10px;
+	align-items: center;
+	align-content: center;
+}
+.nav-bar li a {
+	text-decoration: none;
+	text-align: center;
+	width: 112px;
+	height: 35px;
+	font-size: 20px;
+	position: absolute;
+	font-family: 'Sedgwick Ave Display', cursive;
+	color: black;
+}
+.nav-bar li a:hover{
+	font-size: 22px;
+}
+#cartImage {
+	width: 75px;
+	height: 75px;
+	margin-left: 140px;
+}
+.mid{
+	width: 1030px;
+	margin-left: 150px;
+	margin-top: 150px;
+}
+.products {
+    	padding: 41px 6px 6px 6px;
+    	float: left;
+        background-image: url("treasure.jpg");
+        background-size: 310px 463px;
+        background-repeat: no-repeat;
+   		margin:20px 15px 20px 15px;
+        font-family: 'Sedgwick Ave Display', cursive;
+ 	    color: #8B4513;
+        width: 300px;
+        height: 480px;
+        text-align: center;
+}
+        
+.products a {
+		text-decoration: none;
+		color: black;
+		font-size: 18px;
+}
+.products a:hover{
+        font-size: 22px;
+}
+.detailImage{
+	width: 350px;
+	height: 375px;
+	float: left;
+	margin-top: 50px;
+}
+.detailImage img{
+	width: 250px;
+	height: 250px;
+}
+.detailImage img:hover{
+	width: 350px;
+	height: 375px;
+}
+.description{
+	margin-top: 50px;
+	float: right;
+	width: 650px;
+	background-image: url("treasure.jpg");
+	background-size: 675px 233px;
+	text-align: center;
+	font-family: 'Sedgwick Ave Display', cursive;
+	font-size: 20px;
+	padding-top: 10PX;
+	background-repeat: no-repeat;
+}
+.checkout{
+	margin: 60px 419px 40px 321px;
+}
+table#t01 {
+	width: 90%;
+	background-image: url("treasure.jpg");
+	background-size: 100% 71px;
+	padding: 0px 179px 30px 139px;
+	text-align: center;
+	font-family: 'Sedgwick Ave Display', cursive;
+	font-size: 20px;
+}
+th, td {
+	padding: 20px;
+}
+span{
+	color: white;
+}
+.zero{
+	margin: 250px 14px 28px 341px;
+	font-size: 20px;
+	font-family: 'Sedgwick Ave Display', cursive;
+}
+.logo a {
+	text-decoration: none;
+	color: black;
+}
+.button {
+	background-color: burlywood;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 13px;
+	margin: 0px 5px;
+	cursor: pointer;
 }
